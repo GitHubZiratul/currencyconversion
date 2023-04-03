@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <style>
+        body {
+            background: url("https://img2.goodfon.ru/wallpaper/nbig/4/88/scrooge-mcduck-skrudzh-makdak.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            font-weight: bold;
+            text-align: center;
+            margin-top: -50px;
+            opacity: 0;
+        }
+
+        p {
+            font-size: 2em;
+            margin-top: 50px;
+            text-align: center;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'Converted amount: ' + ${convertedAmount}"></p>
+
+<script>
+    const heading = document.querySelector("h1");
+    const paragraph = document.querySelector("p");
+
+    window.onload = function() {
+        heading.style.opacity = 1;
+        paragraph.style.opacity = 1;
+        heading.classList.add("animate__animated", "animate__bounceIn");
+        paragraph.classList.add("animate__animated", "animate__fadeInUp");
+    }
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</body>
+</html>
